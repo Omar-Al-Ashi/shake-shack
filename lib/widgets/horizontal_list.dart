@@ -3,6 +3,38 @@ import 'package:flutter/material.dart';
 import './horizontal_list_item.dart';
 
 class HorizontalList extends StatefulWidget {
+  final List<dynamic> icons = [
+    {
+      "iconId": 1,
+      "iconLocation": "assets/icons/burger_icon.png",
+      "isClicked": false,
+    },
+    {
+      "iconId": 2,
+      "iconLocation": "assets/icons/potato_icon.png",
+      "isClicked": false,
+    },
+    {
+      "iconId": 3,
+      "iconLocation": "assets/icons/hotdog_icon.png",
+      "isClicked": false,
+    },
+    {
+      "iconId": 4,
+      "iconLocation": "assets/icons/icecream_icon.png",
+      "isClicked": false,
+    },
+    {
+      "iconId": 5,
+      "iconLocation": "assets/icons/drink_icon.png",
+      "isClicked": false,
+    },
+    {
+      "iconId": 6,
+      "iconLocation": "assets/icons/hotdog_icon.png",
+      "isClicked": false,
+    },
+  ];
   @override
   _HorizontalListState createState() => _HorizontalListState();
 }
@@ -10,41 +42,9 @@ class HorizontalList extends StatefulWidget {
 class _HorizontalListState extends State<HorizontalList> {
   @override
   Widget build(BuildContext context) {
-    List<dynamic> icons = [
-      {
-        "iconId": 1,
-        "iconLocation": "assets/icons/burger_icon.png",
-        "isClicked": false,
-      },
-      {
-        "iconId": 2,
-        "iconLocation": "assets/icons/potato_icon.png",
-        "isClicked": false,
-      },
-      {
-        "iconId": 3,
-        "iconLocation": "assets/icons/hotdog_icon.png",
-        "isClicked": false,
-      },
-      {
-        "iconId": 4,
-        "iconLocation": "assets/icons/icecream_icon.png",
-        "isClicked": false,
-      },
-      {
-        "iconId": 5,
-        "iconLocation": "assets/icons/drink_icon.png",
-        "isClicked": false,
-      },
-      {
-        "iconId": 6,
-        "iconLocation": "assets/icons/hotdog_icon.png",
-        "isClicked": false,
-      },
-    ];
-
     void itemClicked(itemId) {
-      var icon = icons.firstWhere((element) => element['iconId'] == itemId);
+      var icon =
+          widget.icons.firstWhere((element) => element['iconId'] == itemId);
       this.setState(() {
         icon['isClicked'] = !icon['isClicked'];
       });
@@ -55,7 +55,7 @@ class _HorizontalListState extends State<HorizontalList> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          ...icons
+          ...widget.icons
               .map((icon) => HorizontalListItem(
                     iconLocation: icon['iconLocation'],
                     itemId: icon['iconId'],
