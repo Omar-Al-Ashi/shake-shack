@@ -6,6 +6,8 @@ import '../widgets/extras_list.dart';
 import '../widgets/horizontal_list_item.dart';
 import '../widgets/meal_detail_header.dart';
 import '../widgets/meal_detail_info.dart';
+import '../widgets/counter.dart';
+import '../widgets/custom_icon_button.dart';
 
 class MealDetail extends StatelessWidget {
   final String title;
@@ -73,6 +75,11 @@ class MealDetail extends StatelessWidget {
     extraClickedHandler(id) {
       var item = extras.firstWhere((element) => element['id'] == id);
       toggleIsSelected(item);
+    }
+
+    addToCartClickHandler(){
+        // print("clickedd");
+        //TODO navigate to cart page
     }
 
     return Scaffold(
@@ -220,8 +227,12 @@ class MealDetail extends StatelessWidget {
                     ),
                   ],
                 ),
-                Column(
-                  children: [],
+                Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Counter(),
+                    CustomIconButton(text: "Add To Cart", icon: Icons.shopping_cart, clickHandler: addToCartClickHandler,)
+                  ],
                 )
               ],
             ),
