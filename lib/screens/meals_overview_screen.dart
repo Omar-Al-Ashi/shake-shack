@@ -4,7 +4,7 @@ import '../widgets/image_header.dart';
 import '../widgets/horizontal_list.dart';
 import '../widgets/most-ordered.dart';
 import '../widgets/burger_card.dart';
-import './meel_detail_screen.dart';
+import 'meal_detail_screen.dart';
 
 class MealsOverview extends StatefulWidget {
   @override
