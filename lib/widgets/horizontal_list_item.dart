@@ -20,7 +20,6 @@ class HorizontalListItem extends StatefulWidget {
 class _HorizontalListItemState extends State<HorizontalListItem> {
   @override
   Widget build(BuildContext context) {
-    print(widget.isItemClicked);
     return InkWell(
       onTap: () => widget.itemClicked(widget.itemId),
       child: Container(
