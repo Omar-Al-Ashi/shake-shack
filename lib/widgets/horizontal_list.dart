@@ -10,7 +10,7 @@ class HorizontalList extends StatefulWidget {
 class _HorizontalListState extends State<HorizontalList> {
   @override
   Widget build(BuildContext context) {
-    final List icons = [
+    List<dynamic> icons = [
       {
         "iconId": 1,
         "iconLocation": "assets/icons/burger_icon.png",
