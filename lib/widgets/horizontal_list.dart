@@ -3,38 +3,10 @@ import 'package:flutter/material.dart';
 import './horizontal_list_item.dart';
 
 class HorizontalList extends StatefulWidget {
-  final List<dynamic> icons = [
-    {
-      "iconId": 1,
-      "iconLocation": "assets/icons/burger_icon.png",
-      "isClicked": false,
-    },
-    {
-      "iconId": 2,
-      "iconLocation": "assets/icons/potato_icon.png",
-      "isClicked": false,
-    },
-    {
-      "iconId": 3,
-      "iconLocation": "assets/icons/hotdog_icon.png",
-      "isClicked": false,
-    },
-    {
-      "iconId": 4,
-      "iconLocation": "assets/icons/icecream_icon.png",
-      "isClicked": false,
-    },
-    {
-      "iconId": 5,
-      "iconLocation": "assets/icons/drink_icon.png",
-      "isClicked": false,
-    },
-    {
-      "iconId": 6,
-      "iconLocation": "assets/icons/hotdog_icon.png",
-      "isClicked": false,
-    },
-  ];
+  List<dynamic> icons;
+
+  HorizontalList(this.icons);
+
   @override
   _HorizontalListState createState() => _HorizontalListState();
 }
