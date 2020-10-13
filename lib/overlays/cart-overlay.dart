@@ -1,22 +1,40 @@
 import 'package:flutter/material.dart';
 import 'package:shake_shack/widgets/checkbox_list_tile_list.dart';
-import '../widgets/cart_list.dart';
 
-class CartOverlay extends StatelessWidget {
+import '../widgets/cart_list.dart';
+import '../widgets/custom_textfield.dart';
+
+class CartOverlay extends StatefulWidget {
   final Function exitCartOverlay;
 
+  CartOverlay(this.exitCartOverlay);
+
+  @override
+  _CartOverlayState createState() => _CartOverlayState();
+}
+
+class _CartOverlayState extends State<CartOverlay> {
   final List checkboxListTileList = [
     "Save Instructions",
     "No Cutlery",
     "Contactless Delivery"
   ];
 
-  CartOverlay(this.exitCartOverlay);
+  
+
+  String specialInstruction = "";
+
+  void specialInstructionOnChangeHandler(newValue) {
+    setState(() {
+      specialInstruction = newValue;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     var deviceHeight = MediaQuery.of(context).size.height;
     var deviceWidth = MediaQuery.of(context).size.width;
+
     return ListView(
       children: [
         Container(
@@ -53,7 +71,7 @@ class CartOverlay extends StatelessWidget {
                     IconButton(
                       icon: new Icon(Icons.arrow_downward),
                       color: Colors.white,
-                      onPressed: () => exitCartOverlay(),
+                      onPressed: () => widget.exitCartOverlay(),
                     ),
                   ],
                 ),
@@ -77,14 +95,9 @@ class CartOverlay extends StatelessWidget {
                     border: Border.all(color: Colors.blueAccent),
                     // color: Colors.white,
                   ),
-                  child: TextField(
-                    style: TextStyle(color: Colors.white),
-                    decoration: InputDecoration(
-                        border: OutlineInputBorder(),
-                        labelStyle: TextStyle(
-                          color: Colors.white,
-                        )),
-                  ),
+                  child: CustomTextField(
+                      specialInstructionOnChangeHandler:
+                          specialInstructionOnChangeHandler),
                 ),
                 const Divider(color: Colors.white),
                 CheckboxListTileList(checkboxListTileList),
