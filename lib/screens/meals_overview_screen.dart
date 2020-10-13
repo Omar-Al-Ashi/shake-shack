@@ -43,6 +43,7 @@ class _MealsOverviewState extends State<MealsOverview> {
 
   setIcons(iconsProps) {
     setState(() {
+      isLoading = false;
       icons = iconsProps;
     });
   }
@@ -89,18 +90,6 @@ class _MealsOverviewState extends State<MealsOverview> {
                               cardClicked: cardClicked),
                         )
                         .toList()
-                    //   BurgerCard(
-                    //       imageLocation: "assets/images/burger4.png",
-                    //       burgerPrice: "AED 42",
-                    //       burgerName: "ShackBurger*",
-                    //       burgerCaption: "Cheesy and Juicy.",
-                    //       cardClicked: cardClicked),
-                    //   BurgerCard(
-                    //       imageLocation: "assets/images/burger3.png",
-                    //       burgerPrice: "AED 39",
-                    //       burgerName: "B-b-bacon!",
-                    //       burgerCaption: "Juicy just got juicier.",
-                    //       cardClicked: cardClicked),
                   ],
                 ),
               ],
