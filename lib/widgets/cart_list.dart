@@ -6,17 +6,17 @@ class CartList extends StatelessWidget {
     {
       "burgerName": "Shack Burger",
       "imageLocation": "assets/images/burger3.png",
-      "price": "AED 42",
+      "price": "AED 32",
     },
     {
-      "burgerName": "Shack Burger",
+      "burgerName": "Chick'n Shack",
       "imageLocation": "assets/images/burger2.png",
-      "price": "AED 42",
+      "price": "AED 27",
     },
     {
-      "burgerName": "Shack Burger",
+      "burgerName": "B-b-bacon!",
       "imageLocation": "assets/images/burger4.png",
-      "price": "AED 42",
+      "price": "AED 24",
     },
   ];
 
