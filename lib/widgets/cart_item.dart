@@ -21,40 +21,14 @@ class _CartItemState extends State<CartItem> {
     });
   }
 
+  List<String> instuctions = [
+    "No Lettuce",
+    "No Onions",
+    "No Tomatoes",
+  ];
+
   @override
   Widget build(BuildContext context) {
-    // return Card(
-    //   shape: RoundedRectangleBorder(
-    //     borderRadius: BorderRadius.circular(20),
-    //   ),
-    //   color: Color(0x99575757),
-    //   child: ListTile(
-    //     onTap: () => toggleExpandCard,
-    //     leading: Container(
-    //       decoration: BoxDecoration(
-    //         borderRadius: BorderRadius.circular(20),
-    //         border: Border.all(color: Colors.white),
-    //       ),
-    //       child: Image.asset(
-    //         widget.image,
-    //         height: 40,
-    //         width: 45,
-    //       ),
-    //     ),
-    //     title: Text(
-    //       widget.burgerName,
-    //       style: TextStyle(
-    //         color: Colors.white,
-    //       ),
-    //     ),
-    //     trailing: Text(
-    //       widget.price,
-    //       style: TextStyle(
-    //         color: Colors.white,
-    //       ),
-    //     ),
-    //   ),
-    // );
     return Card(
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(20),
@@ -86,31 +60,22 @@ class _CartItemState extends State<CartItem> {
           ),
         ),
 
-        // subtitle: Text("  Sub Title's"),
         children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               Column(
                 children: [
-                  Text(
-                    "No Lettuce",
-                    style: TextStyle(
-                      color: Colors.white,
-                    ),
-                  ),
-                  Text(
-                    "No Onions",
-                    style: TextStyle(
-                      color: Colors.white,
-                    ),
-                  ),
-                  Text(
-                    "No Tomatoes",
-                    style: TextStyle(
-                      color: Colors.white,
-                    ),
-                  ),
+                  ...instuctions
+                      .map(
+                        (instruction) => Text(
+                          instruction,
+                          style: TextStyle(
+                            color: Colors.white,
+                          ),
+                        ),
+                      )
+                      .toList()
                 ],
               ),
               Counter(),
