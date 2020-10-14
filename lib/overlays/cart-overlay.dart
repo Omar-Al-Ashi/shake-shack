@@ -20,8 +20,6 @@ class _CartOverlayState extends State<CartOverlay> {
     "Contactless Delivery"
   ];
 
-  
-
   String specialInstruction = "";
 
   void specialInstructionOnChangeHandler(newValue) {
