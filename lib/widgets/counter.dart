@@ -12,11 +12,8 @@ class _CounterState extends State<Counter> {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-          color: Color(0xffF4F4F4),
-        border: Border.all(
-          color: Colors.black,
-          width: 1.5
-        ),
+        color: Color(0xffF4F4F4),
+        border: Border.all(color: Colors.black, width: 1.5),
         borderRadius: BorderRadius.circular(12),
       ),
       child: Row(
